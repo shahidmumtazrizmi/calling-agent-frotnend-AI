@@ -1,0 +1,30 @@
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/_next/static/(.*)",
+      "dest": "/_next/static/$1"
+    },
+    {
+      "src": "/_next/image/(.*)",
+      "dest": "/_next/image/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://your-backend.onrender.com",
+    "NEXT_PUBLIC_WS_URL": "wss://your-backend.onrender.com"
+  },
+  "cleanUrls": true,
+  "trailingSlash": false
+}
